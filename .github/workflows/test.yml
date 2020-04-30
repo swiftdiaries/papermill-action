@@ -25,7 +25,9 @@ jobs:
         conda install ipykernel
         python -m ipykernel install --user --name papermill-kubeflow --display-name "papermill-kubeflow"
 
-    - run: |
+    - name: Build from source
+      shell: bash -l {0}
+      run: |
         npm install
         npm run all
 
@@ -48,7 +50,8 @@ jobs:
         conda install ipykernel
         python -m ipykernel install --user --name papermill-kubeflow --display-name "papermill-kubeflow"
 
-    - uses: ./
+    - name: Test Action locally
+      uses: ./
       with:
         input: test/data/sample-nb-1.ipynb
         output: test/build/sample-nb-1-output.ipynb
