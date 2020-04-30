@@ -16,9 +16,9 @@ jobs:
         activate-environment: papermill-kubeflow
         auto-update-conda: true
     - run: |
-        bash conda install jupyter
-        bash conda install ipykernel
-        bash python -m ipykernel install --user --name papermill-kubeflow --display-name "papermill-kubeflow"
+        conda install jupyter
+        conda install ipykernel
+        python -m ipykernel install --user --name papermill-kubeflow --display-name "papermill-kubeflow"
 
     - run: |
         npm install
@@ -34,9 +34,9 @@ jobs:
         auto-update-conda: true
 
     - run: |
-        bash conda install jupyter
-        bash conda install ipykernel
-        bash python -m ipykernel install --user --name papermill-kubeflow --display-name "papermill-kubeflow"
+        conda install jupyter
+        conda install ipykernel
+        python -m ipykernel install --user --name papermill-kubeflow --display-name "papermill-kubeflow"
 
     - uses: ./
       with:
