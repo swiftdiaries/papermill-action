@@ -38,7 +38,6 @@ jobs:
         condarc-file: etc/papermil-condarc.yml
 
     - uses: ./
-      shell: bash -l {0}
       with:
         input: test/data/sample-nb-1.ipynb
         output: test/build/sample-nb-1-output.ipynb
