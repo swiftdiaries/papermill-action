@@ -14,11 +14,11 @@ jobs:
     - uses: goanpeca/setup-miniconda@v1
       with:
         auto-update-conda: true
-        activate-environment: kubeflow-fairing
+        activate-environment: papermill-kubeflow
         python-version: 3.8
         auto-activate-base: false
         environment-file: etc/papermill-environment.yml
-        condarc-file: etc/papermil-condarc.yml
+        condarc-file: etc/papermill-condarc.yml
 
     - run: |
         npm install
@@ -31,7 +31,7 @@ jobs:
     - uses: goanpeca/setup-miniconda@v1
       with:
         auto-update-conda: true
-        activate-environment: kubeflow-fairing
+        activate-environment: papermill-kubeflow
         python-version: 3.8
         auto-activate-base: false
         environment-file: etc/papermill-environment.yml
