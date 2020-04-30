@@ -11,13 +11,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - uses: goanpeca/setup-miniconda@v1
+      with:
+        auto-update-conda: true
+        activate-environment: kubeflow-fairing
+        python-version: 3.8
+        auto-activate-base: false
+        environment-file: etc/papermill-environment.yml
+        condarc-file: etc/papermil-condarc.yml
+
     - run: |
         npm install
         npm run all
+
   test: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - uses: goanpeca/setup-miniconda@v1
+      with:
+        auto-update-conda: true
+        activate-environment: kubeflow-fairing
+        python-version: 3.8
+        auto-activate-base: false
+        environment-file: etc/papermill-environment.yml
+        condarc-file: etc/papermil-condarc.yml
+
     - uses: ./
-      with: 
-        milliseconds: 1000
+      shell: bash -l {0}
+      with:
+        input: test/data/sample-nb-1.ipynb
+        output: test/build/sample-nb-1-output.ipynb

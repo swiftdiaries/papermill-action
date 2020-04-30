@@ -1,3 +1,6 @@
+# Test build artifacts
+test/build
+
 # Dependency directory
 node_modules
 

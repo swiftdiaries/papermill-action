@@ -1,16 +1,16 @@
 import * as core from '@actions/core'
-import {wait} from './papermill'
+import {runNotebook} from './papermill'
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`)
+    const nb: string = core.getInput('input')
+    const out: string = core.getInput('output')
 
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
-
-    core.setOutput('time', new Date().toTimeString())
+    const result = (await runNotebook(nb, out)) as any
+    if (!result['ok']) {
+      throw result['error']
+    }
+    core.setOutput('out', out)
   } catch (error) {
     core.setFailed(error.message)
   }
