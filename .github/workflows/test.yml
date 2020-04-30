@@ -17,6 +17,7 @@ jobs:
         auto-update-conda: true
         auto-activate-base: false
     - run: |
+        conda activate papermill-kubeflow
         conda info
         conda install pip
         conda install jupyter
@@ -38,6 +39,7 @@ jobs:
         auto-activate-base: false
 
     - run: |
+        conda activate papermill-kubeflow
         conda info
         conda install pip
         conda install jupyter
