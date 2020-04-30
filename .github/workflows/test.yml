@@ -16,6 +16,8 @@ jobs:
         activate-environment: papermill-kubeflow
         auto-update-conda: true
     - run: |
+        conda info
+        conda install pip
         conda install jupyter
         conda install ipykernel
         python -m ipykernel install --user --name papermill-kubeflow --display-name "papermill-kubeflow"
