@@ -16,9 +16,9 @@ jobs:
         activate-environment: papermill-kubeflow
         auto-update-conda: true
         auto-activate-base: false
-    - run: |
-        conda init bash
-        conda activate papermill-kubeflow
+    - name: Setup Papermill
+      shell: bash -l {0}
+      run: |
         conda info
         conda install pip
         conda install jupyter
@@ -39,9 +39,9 @@ jobs:
         auto-update-conda: true
         auto-activate-base: false
 
-    - run: |
-        conda init bash
-        conda activate papermill-kubeflow
+    - name: Setup Papermill
+      shell: bash -l {0}
+      run: |
         conda info
         conda install pip
         conda install jupyter
