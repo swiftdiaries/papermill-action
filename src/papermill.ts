@@ -7,3 +7,9 @@ export async function wait(milliseconds: number): Promise<string> {
     setTimeout(() => resolve('done!'), milliseconds)
   })
 }
+
+export async function installPapermill(): Promise<string> {
+  let papermillPath: string = "/home/runner/papermill"
+
+  return papermillPath
+}
