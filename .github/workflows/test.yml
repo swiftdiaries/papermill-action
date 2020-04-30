@@ -35,7 +35,7 @@ jobs:
         python-version: 3.8
         auto-activate-base: false
         environment-file: etc/papermill-environment.yml
-        condarc-file: etc/papermil-condarc.yml
+        condarc-file: etc/papermill-condarc.yml
 
     - uses: ./
       with:
