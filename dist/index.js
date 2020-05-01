@@ -1624,7 +1624,7 @@ function runNotebook(inputNotebookPath, outputNotebookPath) {
     return __awaiter(this, void 0, void 0, function* () {
         core.debug(`Input Notebook Path: ${inputNotebookPath}`);
         core.debug(`Output Notebook Path: ${outputNotebookPath}`);
-        const command = `bash papermill ${inputNotebookPath} ${outputNotebookPath}`;
+        const command = `papermill ${inputNotebookPath} ${outputNotebookPath}`;
         let result;
         try {
             result = yield execute(command);

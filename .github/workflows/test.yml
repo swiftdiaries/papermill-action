@@ -24,9 +24,10 @@ jobs:
         conda install jupyter
         conda install ipykernel
         python -m ipykernel install --user --name papermill-kubeflow --display-name "papermill-kubeflow"
+        pip install papermill
+        echo "::add-path::$(dirname $(which papermill))"
 
     - name: Build from source
-      shell: bash -l {0}
       run: |
         npm install
         npm run all
@@ -49,6 +50,8 @@ jobs:
         conda install jupyter
         conda install ipykernel
         python -m ipykernel install --user --name papermill-kubeflow --display-name "papermill-kubeflow"
+        pip install papermill
+        echo "::add-path::$(dirname $(which papermill))"
 
     - name: Test Action locally
       uses: ./
