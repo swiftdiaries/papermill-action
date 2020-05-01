@@ -26,6 +26,7 @@ jobs:
         python -m ipykernel install --user --name papermill-kubeflow --display-name "papermill-kubeflow"
         pip install papermill
         echo "::add-path::$(dirname $(which papermill))"
+        mkdir -p test/build
 
     - name: Build from source
       run: |
@@ -52,6 +53,7 @@ jobs:
         python -m ipykernel install --user --name papermill-kubeflow --display-name "papermill-kubeflow"
         pip install papermill
         echo "::add-path::$(dirname $(which papermill))"
+        mkdir -p test/build
 
     - name: Test Action locally
       uses: ./
